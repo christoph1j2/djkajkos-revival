@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  dj-kajkos-revival:
+    build: .
+    restart: unless-stopped
+    environment:
+      - DISCORD_BOT_TOKEN=${DISCORD_BOT_TOKEN}
+      - YOUTUBE_API_KEY=${YOUTUBE_API_KEY}
