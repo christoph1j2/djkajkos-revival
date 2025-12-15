@@ -1,18 +1,21 @@
-import {TextChannel, VoiceChannel} from "discord.js";
-import {AudioResource,VoiceConnection} from "@discordjs/voice";
+import {
+  AudioPlayer,
+  VoiceConnection,
+} from "@discordjs/voice";
+import { TextChannel, VoiceChannel } from "discord.js";
 
 export interface Song {
-    title: string;
-    url: string;
+  title: string;
+  url: string;
+  duration: string;
+  thumbnail: string;
 }
 
-export interface QueueConstructor {
-    textChannel: TextChannel;
-    voiceChannel: VoiceChannel;
-    connection: VoiceConnection | null;
-    songs: Song[];
-    volume: number;
-    playing: boolean;
-    loopOne: boolean;
-    loopAll: boolean;
+export interface GuildQueue {
+  textChannel: TextChannel;
+  voiceChannel: VoiceChannel;
+  connection: VoiceConnection | null;
+  player: AudioPlayer | null;
+  songs: Song[];
+  playing: boolean;
 }

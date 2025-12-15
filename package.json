@@ -1,31 +1,34 @@
 {
   "name": "djkajkos-revival",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "start": "node dist/index.js",
     "build": "tsc",
-    "dev": "ts-node src/index.ts"
+    "dev": "npx ts-node src/index.ts",
+    "register": "npx ts-node src/register-commands.ts"
   },
-  "keywords": [],
+  "keywords": [
+    "discord",
+    "music",
+    "bot",
+    "youtube"
+  ],
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "A Discord music bot that plays YouTube audio",
   "dependencies": {
-    "@discordjs/opus": "^0.9.0",
     "@discordjs/voice": "^0.18.0",
     "discord.js": "^14.16.3",
     "dotenv": "^16.4.5",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.7.2",
-    "youtube-search": "^1.1.2",
-    "youtube-search-api": "^1.2.2",
-    "ytdl-core": "^4.11.5"
+    "ffmpeg-static": "^5.3.0",
+    "prism-media": "^1.3.5",
+    "sodium-native": "^4.3.1",
+    "yt-dlp-exec": "^1.0.2"
   },
   "devDependencies": {
     "@types/node": "^22.10.1",
-    "@typescript-eslint/eslint-plugin": "^8.16.0",
-    "@typescript-eslint/parser": "^8.16.0",
-    "eslint": "^9.16.0"
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
   }
 }
