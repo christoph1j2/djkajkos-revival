@@ -305,7 +305,7 @@ async function handlePlay(interaction: ChatInputCommandInteraction) {
   // "interaction.guild" = server kde byl příkaz použit (nebo null v DM)
   if (!interaction.guild || !interaction.guildId) {
     // "editReply" = uprav tu "pracuji na tom" zprávu
-    return interaction.editReply("Ti mrtgo viebaná tenhle příkas de jenom na zervru");
+    return interaction.editReply("Ti mrtgo vijebaná tenhle příkas de jenom na zervru");
   }
 
   // Získej člena který použil příkaz
@@ -380,10 +380,10 @@ async function handlePlay(interaction: ChatInputCommandInteraction) {
     // Pokud ještě nehraje, spusť přehrávání
     if (!guildQueue.playing) {
       await startPlayback(interaction.guildId, guildQueue, voiceChannel as any);
-      embed.setTitle("🎵 Právě hraje");
+      embed.setTitle("🎵 Bravje hraje");
     } else {
       // Pokud už hraje, ukaž pozici ve frontě
-      embed.addFields({ name: "Pořadí ve frontě", value: `${guildQueue.songs.length}`, inline: true });
+      embed.addFields({ name: "Pořaďí ve fronti", value: `${guildQueue.songs.length}`, inline: true });
     }
 
     // Pošli embed jako odpověď
@@ -622,7 +622,7 @@ async function handleStop(interaction: ChatInputCommandInteraction) {
 
 async function handlePause(interaction: ChatInputCommandInteraction) {
   if (!interaction.guild || !interaction.guildId) {
-    return interaction.reply({ content: "Ti mrtgo viebaná tenhle příkas de jenom na zervru", ephemeral: true });
+    return interaction.reply({ content: "Ti mrtgo vijebaná tenhle příkas de jenom na zervru", ephemeral: true });
   }
 
   const guildQueue = queue.get(interaction.guildId);
@@ -654,7 +654,7 @@ async function handlePause(interaction: ChatInputCommandInteraction) {
 
 async function handleResume(interaction: ChatInputCommandInteraction) {
   if (!interaction.guild || !interaction.guildId) {
-    return interaction.reply({ content: "Ti mrtgo viebaná tenhle příkas de jenom na zervru", ephemeral: true });
+    return interaction.reply({ content: "Ti mrtgo vijebaná tenhle příkas de jenom na zervru", ephemeral: true });
   }
 
   const guildQueue = queue.get(interaction.guildId);
@@ -685,7 +685,7 @@ async function handleResume(interaction: ChatInputCommandInteraction) {
 
 async function handleSkip(interaction: ChatInputCommandInteraction) {
   if (!interaction.guild || !interaction.guildId) {
-    return interaction.reply({ content: "Ti mrtgo viebaná tenhle příkas de jenom na zervru", ephemeral: true });
+    return interaction.reply({ content: "Ti mrtgo vijebaná tenhle příkas de jenom na zervru", ephemeral: true });
   }
 
   const guildQueue = queue.get(interaction.guildId);
@@ -734,7 +734,7 @@ async function handleSkip(interaction: ChatInputCommandInteraction) {
 
 async function handleQueue(interaction: ChatInputCommandInteraction) {
   if (!interaction.guild || !interaction.guildId) {
-    return interaction.reply({ content: "Ti mrtgo viebaná tenhle příkas de jenom na zervru", ephemeral: true });
+    return interaction.reply({ content: "Ti mrtgo vijebaná tenhle příkas de jenom na zervru", ephemeral: true });
   }
 
   const guildQueue = queue.get(interaction.guildId);
@@ -784,7 +784,7 @@ async function handleQueue(interaction: ChatInputCommandInteraction) {
 
 async function handleLoop(interaction: ChatInputCommandInteraction) {
   if (!interaction.guild || !interaction.guildId) {
-    return interaction.reply({ content: "Ti mrtgo viebaná tenhle příkas de jenom na zervru", ephemeral: true });
+    return interaction.reply({ content: "Ti mrtgo vijebaná tenhle příkas de jenom na zervru", ephemeral: true });
   }
 
   const guildQueue = queue.get(interaction.guildId);
