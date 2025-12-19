@@ -210,6 +210,8 @@ async function getVideoInfo(query: string): Promise<Song | null> {
       "--dump-json",    // Vypiš info jako JSON
       "--no-playlist",  // Nestahuj playlisty, jen jedno video
       "--no-warnings",  // Nevypisuj varování
+      "--extractor-args", "youtube:player_client=ios,web",  // Použij iOS/web klienta pro obejití 403
+      "--no-check-certificate",  // Přeskoč SSL kontrolu
       searchQuery,      // URL nebo hledaný text
     ]);
 
@@ -500,6 +502,9 @@ async function playSong(guildId: string, guildQueue: GuildQueue) {
       "-o", "-",          // Output: stdout (místo souboru)
       "--no-playlist",
       "--no-warnings",
+      "--extractor-args", "youtube:player_client=ios,web",  // Použij iOS/web klienta pro obejití 403
+      "--no-check-certificate",  // Přeskoč SSL kontrolu
+      "--user-agent", "Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.0 Mobile/15E148 Safari/604.1",
       song.url,
     ]);
 

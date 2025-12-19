@@ -2,7 +2,9 @@ FROM node:18-alpine
 
 # Install FFmpeg and yt-dlp dependencies
 RUN apk add --no-cache ffmpeg python3 py3-pip
-RUN pip3 install --break-system-packages yt-dlp
+
+# Install yt-dlp (use --pre for latest nightly builds which have newest YouTube fixes)
+RUN pip3 install --break-system-packages --upgrade yt-dlp
 
 WORKDIR /app
 
@@ -14,5 +16,5 @@ RUN npm install
 COPY . .
 RUN npm run build
 
-# Start the bot
-CMD ["npm", "start"]
+# Update yt-dlp at container start for freshest YouTube fixes
+CMD yt-dlp -U; npm start
